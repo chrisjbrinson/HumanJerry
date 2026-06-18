@@ -1,4 +1,4 @@
-```yaml
+
 name: Deploy Website
 
 on:
@@ -38,5 +38,5 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id E1QE1XOFIRJGSI \
             --paths "/*"
-```
+
 
