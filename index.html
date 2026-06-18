@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HumanJerry</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#111;
+    --text:#f5f5f5;
+    --muted:#9c9c9c;
+    --accent:#d6c7a1;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(17,17,17,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #222;
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:18px;
+}
+
+nav a{
+    color:var(--muted);
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin:60px 0 30px;
+    font-weight:500;
+}
+
+.section-subtitle{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:.9rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-top:4px;
+}
+.section-subtitle2{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:.9rem;
+    color:var(--muted);
+    letter-spacing:3px;
+    margin-top:4px;
+}
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    font-weight:500;
+}
+
+.hero p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* SECTION TITLES */
+
+.section-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin:60px 0 30px;
+}
+
+/* ARTWORK GRID */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:6px;
+    padding:0 20px;
+}
+
+.tile{
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:#1b1b1b;
+    cursor:pointer;
+}
+
+.tile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .3s ease;
+}
+
+.tile:hover img{
+    transform:scale(1.05);
+}
+
+/* MOTION GRID */
+
+.motion-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
+    gap:20px;
+    padding:20px;
+    max-width:1600px;
+    margin:auto;
+}
+
+.motion-grid video{
+    width:100%;
+    border-radius:6px;
+    background:black;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.about p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:var(--muted);
+    padding:50px 20px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:95%;
+    max-height:95%;
+    object-fit:contain;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .motion-grid{
+        grid-template-columns:1fr;
+    }
+
+    .nav-container{
+        gap:20px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="#artwork">Static</a>
+        <a href="#motion">Motion</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Chris Brinson
+        <span class="section-subtitle2">(HumanJerry)</span>
+    </h1>
+    <p>Digital Collage & Generative Motion Art</p>
+</section>
+
+<h2 class="section-title" id="artwork">
+    Static
+    <span class="section-subtitle">Photoshop/Procreate</span>
+</h2>
+
+<div class="gallery">
+
+    <div class="tile"><img src="images/alive.png" alt=""></div>
+    <div class="tile"><img src="images/artEchoke.jpg" alt=""></div>
+    <div class="tile"><img src="images/BirdBrains.jpg" alt=""></div>
+    <div class="tile"><img src="images/BirdMouth.jpg" alt=""></div>
+    <div class="tile"><img src="images/broken.jpg" alt=""></div>
+    <div class="tile"><img src="images/BurnIt.jpg" alt=""></div>
+    <div class="tile"><img src="images/CatShark.jpg" alt=""></div>
+    <div class="tile"><img src="images/centrifugal.jpg" alt=""></div>
+    <div class="tile"><img src="images/CrabGirl.jpg" alt=""></div>
+    <div class="tile"><img src="images/Crow.jpg" alt=""></div>
+    <div class="tile"><img src="images/deadHead.jpg" alt=""></div>
+    <div class="tile"><img src="images/DeadMountain.jpg" alt=""></div>
+    <div class="tile"><img src="images/Dentists.jpg" alt=""></div>
+    <div class="tile"><img src="images/empty.jpg" alt=""></div>
+    <div class="tile"><img src="images/EndOfTheLine.jpg" alt=""></div>
+    <div class="tile"><img src="images/FinalBloom.jpg" alt=""></div>
+    <div class="tile"><img src="images/flamingoLady.jpg" alt=""></div>
+    <div class="tile"><img src="images/gailTheSnail.jpg" alt=""></div>
+    <div class="tile"><img src="images/Gangster.jpg" alt=""></div>
+    <div class="tile"><img src="images/GetOut.jpg" alt=""></div>
+    <div class="tile"><img src="images/GoingCrazy.jpg" alt=""></div>
+    <div class="tile"><img src="images/HailMary.jpg" alt=""></div>
+    <div class="tile"><img src="images/haunted.jpg" alt=""></div>
+    <div class="tile"><img src="images/HeadSpace.jpg" alt=""></div>
+    <div class="tile"><img src="images/HideAndSeek.jpg" alt=""></div>
+    <div class="tile"><img src="images/HiveMind.jpg" alt=""></div>
+    <div class="tile"><img src="images/ImStuck.jpg" alt=""></div>
+    <div class="tile"><img src="images/inferno.jpg" alt=""></div>
+    <div class="tile"><img src="images/InsideOut.jpg" alt=""></div>
+    <div class="tile"><img src="images/intertwined.jpg" alt=""></div>
+    <div class="tile"><img src="images/ItWasHim.jpg" alt=""></div>
+    <div class="tile"><img src="images/LadyBird.jpg" alt=""></div>
+    <div class="tile"><img src="images/LakeFire.jpg" alt=""></div>
+    <div class="tile"><img src="images/lifeanddeath.jpg" alt=""></div>
+    <div class="tile"><img src="images/LOST.jpg" alt=""></div>
+    <div class="tile"><img src="images/madonna.jpg" alt=""></div>
+    <div class="tile"><img src="images/me.jpg" alt=""></div>
+    <div class="tile"><img src="images/Midnight.jpg" alt=""></div>
+    <div class="tile"><img src="images/monkeybars.jpg" alt=""></div>
+    <div class="tile"><img src="images/MotherNature.jpg" alt=""></div>
+    <div class="tile"><img src="images/NiceMelons.jpg" alt=""></div>
+    <div class="tile"><img src="images/NightMan.jpg" alt=""></div>
+    <div class="tile"><img src="images/PLASMATIC_ART.jpg" alt=""></div>
+    <div class="tile"><img src="images/REM.jpg" alt=""></div>
+    <div class="tile"><img src="images/Resonance.jpg" alt=""></div>
+    <div class="tile"><img src="images/Roxanne.jpg" alt=""></div>
+    <div class="tile"><img src="images/shit.jpg" alt=""></div>
+    <div class="tile"><img src="images/staringIntoSpace.jpg" alt=""></div>
+    <div class="tile"><img src="images/Surfacing.jpg" alt=""></div>
+    <div class="tile"><img src="images/TheAutopsy.jpg" alt=""></div>
+    <div class="tile"><img src="images/theEmbrace.jpg" alt=""></div>
+    <div class="tile"><img src="images/TheListener.jpg" alt=""></div>
+    <div class="tile"><img src="images/theMaiden2.jpg" alt=""></div>
+    <div class="tile"><img src="images/TheMountain.jpg" alt=""></div>
+    <div class="tile"><img src="images/To The Moon.jpg" alt=""></div>
+    <div class="tile"><img src="images/untitled.jpg" alt=""></div>
+    <div class="tile"><img src="images/veiled2.jpg" alt=""></div>
+    <div class="tile"><img src="images/whatthehellisthat.jpg" alt=""></div>
+    <div class="tile"><img src="images/Who.jpg" alt=""></div>
+
+</div>
+
+<h2 class="section-title" id="motion">
+    Motion
+    <span class="section-subtitle">TouchDesigner</span>
+</h2>
+
+
+<div class="motion-grid">
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Ghostfield.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/erameldmusic/" target="_blank">
+                @erameldmusic
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Bluebird.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/l3mon.sauc3/" target="_blank">
+                @l3mon.sauc3
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Cellularsphere.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/erameldmusic/" target="_blank">
+                @erameldmusic
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Erosion.9-1.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/sunblindstudios/" target="_blank">
+                @sunblindstudios
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Lava.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/erameldmusic/" target="_blank">
+                @erameldmusic
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Mammutus3.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/crookedcolours/" target="_blank">
+                @crookedcolours
+            </a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <video controls preload="metadata">
+            <source src="videos/Cellular.2-1.m4v" type="video/mp4">
+        </video>
+
+        <div class="music-credit">
+            Music by
+            <a href="https://www.instagram.com/asuramusicofficial/" target="_blank">
+                @asuramusicofficial
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<section class="about" id="about">
+
+    <h2 class="section-title">About</h2>
+
+    <p>
+        HumanJerry is a digital collage and motion art project
+        exploring dreams, memory, nostalgia, anxiety, and surreal
+        transformations through found imagery and generative visuals.
+    </p>
+
+    <br>
+
+    <p>
+        Instagram:
+        <a href="https://instagram.com/humanjerry_art" target="_blank">
+            @humanjerry_art
+        </a>
+    </p>
+
+</section>
+
+<footer>
+    © 2026 HumanJerry
+</footer>
+
+<div class="lightbox" id="lightbox">
+    <img id="lightbox-image">
+</div>
+
+<script>
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+
+document.querySelectorAll('.tile img').forEach(img => {
+
+    img.addEventListener('click', () => {
+
+        lightbox.style.display = 'flex';
+        lightboxImage.src = img.src;
+
+    });
+
+});
+
+lightbox.addEventListener('click', () => {
+
+    lightbox.style.display = 'none';
+
+});
+
+</script>
+
+</body>
+</html>
+
